@@ -1,0 +1,8 @@
+nav li a{
+    color: white;
+}
+
+nav li a:hover, a:active{
+    color: lightgray;
+    font-weight: 470;  
+}
