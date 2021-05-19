@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nav li a{
     color: white;
 }
@@ -5,4 +6,13 @@ nav li a{
 nav li a:hover, a:active{
     color: lightgray;
     font-weight: 470;  
+=======
+nav li a{
+    color: white;
+}
+
+nav li a:hover, a:active{
+    color: lightgray;
+    font-weight: 470;  
+>>>>>>> 88d0d3205a96828d5d17b6c2438cac71125ab28f
 }
