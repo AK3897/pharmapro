@@ -29,7 +29,7 @@
     /* Navbar*/
     .logo{
         float: left;
-        max-width: 70%;
+        max-width: 60%;
         height: auto;
     }
 
@@ -38,21 +38,55 @@
     }
 
     .navbar-dark .nav-item .nav-link{
-        color:white;
+        color:lightgray;
+        font-weight: 500;
     }
     
     .navbar-dark .nav-item.active .nav-link,
     .navbar-dark .nav-item:focus .nav-link,
     .navbar-dark .nav-item:hover .nav-link {
-    color: lightgray;
+    color:dodgerblue;
     }
+
+    /* Container Carousel */
+    .container, .container-fluid, .container-1{
+      width: 100%;
+      padding: 0%;
+      margin: 0%;
+    }
+
+    /* Carousel */
+    /* Slide background image */
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-item img {
+      max-height: 100vh; 
+      object-fit:cover;
+    }
+
+    .carousel-indicators li { 
+      width: 15px; 
+      height: 15px; 
+      border-radius: 100%;
+      margin-top: 30px;
+      margin-right: 10px;
+      margin-left: 10px; 
+    }
+
+    .carousel-caption {
+      position: absolute;
+      top:150px
+
+  }
 
   </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <h1>Page under construction!</h1>
-
+    <!-- Navbar -->  
     <nav class="navbar navstyle navbar-dark navbar-expand-sm fixed-top">  
 
         <!-- Brand -->
@@ -87,32 +121,76 @@
             </ul>
         </div>
     </nav>
-    
-    <div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
-      <h1>Section 1</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+
+    <!-- Section 1 -->
+    <div id="section1" class="container-fluid container-1">
+      <div id="slide" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#slide" data-slide-to="0" class="active"></li>
+          <li data-target="#slide" data-slide-to="1"></li>
+          <li data-target="#slide" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/slidebg1.jpg" alt="Our Experience" width="1100" height="200">
+            <div class="carousel-caption" style="color: white; margin-left: 450px; margin-right: -80px;">
+              <h3>
+                Because of our experience we are able to provide simple, high quality and pragmatic consulting, training and logistics services and pharmaceutical products that will benefit you, your sector and your business
+              </h3>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="assets/slidebg2.jpg" alt="Our Dedication" width="1100" height="200">
+            <div class="carousel-caption" style="color: black; margin-left: 450px; margin-right: -80px;">
+              <h3>We are dedicated to building long lasting relationships with our clients associates by providing high-quality consulting, training and logistics services and pharmaceutical products in a timely and economical manner
+              </h3>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="assets/slidebg3.jpg" alt="Quality" width="1100" height="200">
+            <div class="carousel-caption" style="color: black; top: 110px;">
+              <h3>Total Quality. Assured.</h3>
+            </div>   
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#slide" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#slide" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
     </div>
+
+    <!-- Section 2 -->
     <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
       <h1>Section 2</h1>
       <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     </div>
+
+    <!-- Section 3 -->
     <div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
       <h1>Section 3</h1>
       <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     </div>
+
+    <!-- Section 4 -->
     <div id="section4" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
         <h1>Section 4</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>
+
+      <!-- Section 5 -->
       <div id="section5" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
         <h1>Section 5</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>
+
+      <!-- Section 6 -->
       <div id="section6" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
         <h1>Section 6</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
