@@ -26,11 +26,19 @@
       position: relative; 
     }
 
+    .container-fluid{
+      padding: 5%;
+    }
+
     /* Navbar*/
     .logo{
         float: left;
         max-width: 60%;
         height: auto;
+    }
+
+    .navbar {
+      margin-bottom: 100px;
     }
 
     .navstyle{
@@ -46,10 +54,37 @@
     .navbar-dark .nav-item:focus .nav-link,
     .navbar-dark .nav-item:hover .nav-link {
     color:dodgerblue;
+    }  
+
+    /*Seperator (line)*/
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      height:2px;
+      border-width:0;
+    }
+    
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #000;
+    }
+    
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 3.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 3.0em;
     }
 
+      /* --------------------------------------Section 1----------------------------------------- */
     /* Container Carousel */
-    .container, .container-fluid, .container-1{
+    #section1.container-fluid, .container-1{
       width: 100%;
       padding: 0%;
       margin: 0%;
@@ -65,6 +100,7 @@
     .carousel-item img {
       max-height: 100vh; 
       object-fit:cover;
+      margin-top: 15vh;
     }
 
     .carousel-indicators li { 
@@ -76,51 +112,250 @@
       margin-left: 10px; 
     }
 
-    .carousel-caption {
+    /* Carousel Captions */
+    .carousel-caption h3{
       position: absolute;
-      top:150px
+      font-size: 4.5vh;
+    }
+
+    #caption1{
+      color: white;
+      top:35vh; 
+      margin-left: 430px; 
+      margin-right: -90px;
+    }
+
+    #caption2{
+      color: black;
+      top:43vh;  
+      margin-left: 450px; 
+      margin-right: -80px;
+    }
+
+    #caption3{
+      color: black; 
+      top: 20vh;
+      margin-left: 50vh;
+    }
+
+  /* --------------------------------------Section 2----------------------------------------- */
+  /* Paragraph spacing */
+  .para{
+    margin: 5% 7% 5% 7%;
+  }
+
+  /* Flex Columns and Rows */
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around(50px);
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  .para-head{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  /*.............................. Extra small devices (phones, 600px and down) .........................*/
+  @media only screen and (max-width: 600px) {
+    
+    p{
+      font-size: 12.5px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /*Seperator (line)*/
+    .separator h2{
+      font-size: 22px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1{
+      display: none;
+    }
+
+    /* Section 2 */
+    #section2.container-fluid{
+      margin-top: 20vh;
+    }
+
+    #section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    #section2 #sec2-img2{
+      display: none;
+    }
+    
+    .para-head{
+      font-size: 18px;
+      font-weight: 460;
+    }  
 
   }
+
+  /*............... Small devices (portrait tablets and large phones, 600px and up) .............. */
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+
+    p{
+      font-size: 14.5px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+     /*Seperator (line)*/
+     .separator h2{
+      font-size: 25px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1{
+      display:contents;
+    }
+
+    .carousel-caption h3{
+      position: absolute;
+      font-size: 15px;
+    }
+
+    /* Carousel Captions */
+    #caption1{
+      color: white;
+      top:30vh; 
+      margin-left: 230px; 
+      margin-right: -55px;
+    }
+
+    #caption2{
+      color: black;
+      top:30vh;  
+      margin-left: 230px; 
+      margin-right: -60px;
+    }
+
+    #caption3{
+      color: black; 
+      top: 20vh;
+      margin-left: 150px; 
+    }
+
+    /* Section 2 */
+    #Section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+  }
+
+  /*....................... Medium devices (landscape tablets, 768px and up) ......................*/
+  @media only screen and (min-width: 768px) and (max-width: 1100 px) {
+
+    /* Section 1 */
+    .carousel-caption h3{
+      position: absolute;
+      font-size: 12px;
+    }
+
+    /* Section 2 */
+
+  }
+
 
   </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <!-- Navbar -->  
-    <nav class="navbar navstyle navbar-dark navbar-expand-sm fixed-top">  
+  <!-- Navbar -->  
+  <nav class="navbar navstyle navbar-dark navbar-expand-sm fixed-top">  
 
-        <!-- Brand -->
-        <a class="navbar-brand" href="Default.html"><img src="assets/pharmapro logo.png" alt="Logo" class="logo"></a>
+      <!-- Brand -->
+      <a class="navbar-brand" href="Default.html"><img src="assets/pharmapro logo.png" alt="Logo" class="logo"></a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="#section1">Our Perspective</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#section2">Overview</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#section3">What We Do</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#section4">Our Consulting Services</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#section5">Our Team</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#section6">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+              <a class="nav-link" href="#section1">Our Perspective</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section2">Overview</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section3">What We Do</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section4">Our Consulting Services</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section5">Our Team</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section6">Contact</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
 
     <!-- Section 1 -->
     <div id="section1" class="container-fluid container-1">
@@ -133,7 +368,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="assets/slidebg1.jpg" alt="Our Experience" width="1100" height="200">
-            <div class="carousel-caption" style="color: white; margin-left: 450px; margin-right: -80px;">
+            <div id="caption1" class="carousel-caption">
               <h3>
                 Because of our experience we are able to provide simple, high quality and pragmatic consulting, training and logistics services and pharmaceutical products that will benefit you, your sector and your business
               </h3>
@@ -141,14 +376,14 @@
           </div>
           <div class="carousel-item">
             <img src="assets/slidebg2.jpg" alt="Our Dedication" width="1100" height="200">
-            <div class="carousel-caption" style="color: black; margin-left: 450px; margin-right: -80px;">
+            <div id="caption2" class="carousel-caption">
               <h3>We are dedicated to building long lasting relationships with our clients associates by providing high-quality consulting, training and logistics services and pharmaceutical products in a timely and economical manner
               </h3>
             </div>   
           </div>
           <div class="carousel-item">
             <img src="assets/slidebg3.jpg" alt="Quality" width="1100" height="200">
-            <div class="carousel-caption" style="color: black; top: 110px;">
+            <div id="caption3" class="carousel-caption">
               <h3>Total Quality. Assured.</h3>
             </div>   
           </div>
@@ -163,10 +398,35 @@
     </div>
 
     <!-- Section 2 -->
-    <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-      <h1>Section 2</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <div id="section2" class="container-fluid">
+      <div class="separator"><h2>Overview</h2></div>
+       <div>
+         <p class="para">
+          We help pharmaceutical sectors in the Kingdom of Saudi Arabia & MENA become more competitive in a rapidly evolving market characterized by unpredictable product pipelines and uncertain regulatory actions. We bring unmatched expertise in innovation, cost management, organizational design, R&D and other disciplines that determine which pharma sectors achieve and maintain pharmaceutical leadership.
+         </p>
+       </div>
+
+       <div class="para" style="text-align: center; margin-top: 9%; margin-bottom: 9%;">
+        <img src="assets/pharmapro logo white-bg.JPG" alt="Logo" width="30%" height="auto">
+        <p>“we help you to make better informed strategic decisions”</p>
+       </div>
+
+       <div class="flex-row">
+         <div class="flex-column">
+          <p class="para-head">Vision</p>
+          <p>Excellent scientific reference in the pharmaceutical consulting, training and logistics services and pharmaceutical products services.</p>
+
+          <p class="para-head">Mission</p>
+          <p>To exceed our customers’ expectations with excellence and leadership in providing pharmaceutical consulting services.</p>
+
+          <p class="para-head">Value</p>
+          <p>We are committed to providing the best pharmaceutical consulting services to our clients with a focus on leadership, integrity, and efficiency.</p>
+         </div>
+
+         <div>
+           <img src="assets/overview.jpg" id="sec2-img2" alt="Overview image" width="100%" height="auto">
+         </div>      
+       </div>
     </div>
 
     <!-- Section 3 -->
