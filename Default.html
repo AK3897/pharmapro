@@ -37,10 +37,6 @@
         height: auto;
     }
 
-    .navbar {
-      margin-bottom: 100px;
-    }
-
     .navstyle{
         background-color: black;
     }
@@ -63,6 +59,7 @@
       text-align: center;
       height:2px;
       border-width:0;
+      margin-top: 5%;  
     }
     
     .separator::before,
@@ -82,67 +79,83 @@
       margin-right: 3.0em;
     }
 
-      /* --------------------------------------Section 1----------------------------------------- */
-    /* Container Carousel */
-    #section1.container-fluid, .container-1{
-      width: 100%;
-      padding: 0%;
-      margin: 0%;
-    }
-
-    /* Carousel */
-    /* Slide background image */
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-item img {
-      max-height: 100vh; 
-      object-fit:cover;
-      margin-top: 15vh;
-    }
-
-    .carousel-indicators li { 
-      width: 15px; 
-      height: 15px; 
-      border-radius: 100%;
-      margin-top: 30px;
-      margin-right: 10px;
-      margin-left: 10px; 
-    }
-
-    /* Carousel Captions */
-    .carousel-caption h3{
-      position: absolute;
-      font-size: 4.5vh;
-    }
-
-    #caption1{
-      color: white;
-      top:35vh; 
-      margin-left: 430px; 
-      margin-right: -90px;
-    }
-
-    #caption2{
-      color: black;
-      top:43vh;  
-      margin-left: 450px; 
-      margin-right: -80px;
-    }
-
-    #caption3{
-      color: black; 
-      top: 20vh;
-      margin-left: 50vh;
-    }
-
-  /* --------------------------------------Section 2----------------------------------------- */
   /* Paragraph spacing */
   .para{
-    margin: 5% 7% 5% 7%;
+    margin: 5% 7% 0% 7%;
   }
+
+  /* --------------------------------------Section 1----------------------------------------- */
+  /* Container Carousel */
+  #section1.container-fluid{
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  #section1 .perspective-div .separator::before,
+  #section1 .perspective-div .separator::after,
+  #section3 .separator::before,
+  #section3 .separator::after{
+    border-bottom: 1px solid #fff;
+  }
+
+  .perspective-div{
+    background-color: dodgerblue;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+  }
+
+  /* Carousel */
+  /* Slide background image */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-item img {
+    max-height: 100vh; 
+    object-fit:cover;
+    margin-top: 15vh;
+  }
+
+  .carousel-indicators li { 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 100%;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px; 
+  }
+
+  /* Carousel Captions */
+  .carousel-caption h3{
+    position: absolute;
+    font-size: 4.5vh;
+  }
+
+  #caption1{
+    color: white;
+    top:35vh; 
+    margin-left: 430px; 
+    margin-right: -90px;
+  }
+
+  #caption2{
+    color: black;
+    top:43vh;  
+    margin-left: 450px; 
+    margin-right: -80px;
+  }
+
+  #caption3{
+    color: black; 
+    top: 20vh;
+    margin-left: 50vh;
+  }
+
+  /* --------------------------------------Section 2----------------------------------------- */
 
   /* Flex Columns and Rows */
   .flex-column {
@@ -165,11 +178,47 @@
     font-weight: 500;
   }
 
+  /* --------------------------------------Section 3----------------------------------------- */
+  #section3.container-fluid{
+    background-color: dodgerblue;
+    color: white;
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
+  }
+
+  #section3 ul.para-list{
+    line-height: 1.6;
+    list-style-position: inside;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+
+  #section3 ul.para-list li + li {
+    margin-top: 10px;
+  }
+
+  /* Text over Image */
+  #section3 .container-3 {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   /*.............................. Extra small devices (phones, 600px and down) .........................*/
   @media only screen and (max-width: 600px) {
     
     p{
-      font-size: 12.5px;
+      font-size: 13px;
     }
 
     /* Navbar*/
@@ -199,15 +248,15 @@
     }
 
     /* Section 1 */
-    #section1{
+    #section1 #slide{
       display: none;
     }
 
-    /* Section 2 */
-    #section2.container-fluid{
-      margin-top: 20vh;
+    #section1 .perspective-div{
+      padding-top: 25%;
     }
 
+    /* Section 2 */
     #section2 .flex-row {
       display: flex;
       flex-direction: row;
@@ -226,6 +275,16 @@
       font-weight: 460;
     }  
 
+    /* Section 3 */
+    #section3 .container-3{
+      display: none;
+    }
+
+    #section3 ul.para-list{
+      font-size: 13px;
+      margin-right: 9%;
+      margin-left: 8%;
+    }
   }
 
   /*............... Small devices (portrait tablets and large phones, 600px and up) .............. */
@@ -242,7 +301,7 @@
 
     .navbar-dark .nav-item .nav-link{
       color:lightgray;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
     }
 
@@ -262,7 +321,7 @@
     }
 
     /* Section 1 */
-    #section1{
+    #section1 #slide{
       display:contents;
     }
 
@@ -358,7 +417,7 @@
   </nav>
 
     <!-- Section 1 -->
-    <div id="section1" class="container-fluid container-1">
+    <div id="section1" class="container-fluid">
       <div id="slide" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
           <li data-target="#slide" data-slide-to="0" class="active"></li>
@@ -395,6 +454,21 @@
           <span class="carousel-control-next-icon"></span>
         </a>
       </div>
+
+      <div class="perspective-div">
+        <div class="separator"><h2>Our Perspective</h2></div>
+       <div>
+         <p class="para">
+          Over the last 30 years, the Saudi pharmaceutical industry has made revolutionary contributions to health care. The Saudi pharmaceutical industry now faces the challenges of drug manufacturing, increasingly competitive markets, and uncertain policy and regulatory environments. Regardless of ongoing medications need related to numerous diseases, the Saudi pharmaceutical sectors can no longer depend on their pricing power to achieve profitable growth.
+          <br/><br/>
+          The net result of ongoing cost pressures and a precipitous decline in R&D productivity will be an unprecedented decline in the share of the overall healthcare profit pool captured by the largest research-based pharmaceutical companies.
+        </p>
+
+        <p class="para">
+          Lower-margin pharmaceutical sectors, like generic manufacturers in the Kingdome of Saudi Arabia, will increase their share. The critical question for the Saudi pharmaceutical industry is how to evolve their business model in order to thrive in a world of shifting profit pools by focusing on the high-quality outcomes by R&D rather than by simply generating more inputs, more products, more procedures and ultimately more cost to the payers.
+        </p>
+       </div>
+      </div>
     </div>
 
     <!-- Section 2 -->
@@ -430,10 +504,50 @@
     </div>
 
     <!-- Section 3 -->
-    <div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-      <h1>Section 3</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <div id="section3" class="container-fluid">
+      <div class="separator"><h2>What We Do</h2></div>
+      <div>
+        <p class="para">
+          We work with leading pharmaceutical sectors in Saudi Arabia (e.g., companies, manufactures, Saudi FDA,  and Saudi MOH) to help create the foundations for future growth and improve the effectiveness and efficiency of their current operations. We help our clients by focusing on the priorities that will make them adaptable to attractive market opportunities, including:
+          <br/><br/>
+          <ul class="para-list">
+            <li>R&D and regulatory advisory services to the pharmaceutical industry.</li>
+            <li>Enhancing innovation and clinical differentiation. <strong>Pharmaceutical and biopharmaceutical companies can realize the full potential of their R&D and innovation capabilities by building portfolios that balance solid investments with riskier product development and source innovation from both internal and external sources.</strong></li>
+            <li>Adopting cost-effective business models. <strong>Pharma companies need to change their business models to significantly increase their return on sales.</strong></li>
+            <li>Enhancing the nationalization and development of pharmaceutical industries.</li>
+            <li>Exploiting the true benefits of global scale while managing complexity. <strong> Pharma companies will discriminate between functions where scale adds value versus where it reduces productivity and adds complexity.</strong></li>
+          </ul>
+        </p>
+
+        <p class="para">
+          We work with healthcare institutions and governmental authority to improve the healthcare practice in Saudi Arabia by applying the most adapted and evidence-based practices. We help our clients by focusing on the priorities that will make them adaptable to attractive market opportunities, including:
+          <br/><br/>
+          <ul class="para-list">
+            <li>R&D and regulatory advisory services to the healthcare industry.</li>
+            <li>Enhancing innovation and clinical differentiation.</li>
+            <li>Adopting cost-effective business models. <strong>Healthcare institutions need to change their business models to significantly increase their return on sales.</strong></li>
+            <li>Enhancing the quality of giving services. <strong>Helping the healthcare institutions to adapt the national and international standard to improve the services which lead  to better patients' outcomes results.</strong></li>
+            <li>Exploiting the true benefits of global scale while managing complexity. <strong>Successful healthcare institutions will discriminate between functions where scale adds value versus where it reduces productivity and adds complexity.</strong></li>
+          </ul>
+        </p>
+
+        <p class="para">
+          We work partnerships from over he world to bring the highest and must required pharmaceutical, herbal and cosmetic products which covering the broad scale of needs for everyone on our community.  To give the highest degree of excellence  in dealing with such products we have the following:
+          <br/><br/>
+          <ul class="para-list">
+            <li>A unique marketing and commercial team to promote and aid the safe and secure products diffusion.</li>
+            <li>A secure marketplace to reach all authorized customers with our portfolio in no time <strong>which will lead to better products availability and customer stratification.</strong></li>
+            <li>We have an agreement which give us the opportunity to store and deliver the products <strong>immediately to more than 160 areas in Saudi Arabia within 48 hours.</strong></li>
+            <li>Adopting cost-effective business models. <strong>Pharma companies need to change their business models to significantly increase their return on sales.</strong></li>
+            <li><strong>Enhancing the concept of excellency and high-quality environment</strong> by providing the most  attracted topics, training, materials and consultation.</li>
+          </ul>
+        </p>
+      </div>
+      <br/>
+      <div class="container-3">
+        <img src="assets/what we do pic.jpg" id="sec3-img" alt="What We Do Image" width="100%" height="auto">
+        <div class="centered"><p>“We bring together world class expertise to deliver real value to our clients.”</p></div>
+      </div>
     </div>
 
     <!-- Section 4 -->
