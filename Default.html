@@ -27,7 +27,8 @@
     }
 
     .container-fluid{
-      padding: 5%;
+      padding-top: 5%;
+      padding-bottom: 5%;
     }
 
     /* Navbar*/
@@ -59,7 +60,6 @@
       text-align: center;
       height:2px;
       border-width:0;
-      margin-top: 5%;  
     }
     
     .separator::before,
@@ -83,6 +83,57 @@
   .para{
     margin: 5% 7% 0% 7%;
   }
+  
+  /* White Seperator */
+  #section1 .perspective-div .separator::before,
+  #section1 .perspective-div .separator::after,
+  #section3 .separator::before,
+  #section3 .separator::after{
+    border-bottom: 1px solid #fff;
+  }
+
+  /* Lists */
+  ul.para-list{
+    line-height: 1.6;
+    list-style-position: outside;
+  }
+
+  ul.para-list li + li {
+    margin-top: 10px;
+  }
+
+  /* Text over Image */
+  .container-img {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+    /* Flex Columns and Rows */
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
 
   /* --------------------------------------Section 1----------------------------------------- */
   /* Container Carousel */
@@ -90,13 +141,6 @@
     width: 100%;
     padding: 0%;
     margin: 0%;
-  }
-
-  #section1 .perspective-div .separator::before,
-  #section1 .perspective-div .separator::after,
-  #section3 .separator::before,
-  #section3 .separator::after{
-    border-bottom: 1px solid #fff;
   }
 
   .perspective-div{
@@ -157,22 +201,6 @@
 
   /* --------------------------------------Section 2----------------------------------------- */
 
-  /* Flex Columns and Rows */
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around(50px);
-    align-items: center;
-    margin-top: 5%;
-  }
-
   .para-head{
     font-size: 20px;
     font-weight: 500;
@@ -188,30 +216,90 @@
   }
 
   #section3 ul.para-list{
-    line-height: 1.6;
     list-style-position: inside;
     margin-right: 15%;
     margin-left: 15%;
   }
 
-  #section3 ul.para-list li + li {
-    margin-top: 10px;
+  /* --------------------------------------Section 4----------------------------------------- */
+  #section4.container-fluid{
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
   }
 
-  /* Text over Image */
-  #section3 .container-3 {
-    position: relative;
+  .consult-div{
+    background-color: dodgerblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 50%;
+    margin-top: 5%;
+    padding: 5%;
+  }
+
+  .consult-div + .consult-div{
+    margin-left: 5%;
+  }
+
+  #section4 .flex-row {
+    flex-wrap: nowrap;
+  }
+
+  /* --------------------------------------Section 5----------------------------------------- */
+  #section5 .para{
     text-align: center;
-    color: black;
-    font-size: 30px;
-    font-weight: 500;
   }
 
-  .centered {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .team-img{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5%;
+  }
+
+  #section5 .flex-column{
+    margin: 7% 10% 0% 10%;
+  }
+
+  /* --------------------------------------Section 6----------------------------------------- */
+  #section6.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #section6 .flex-row{
+    margin: 0;
+  }
+  
+  .contact-div1{
+    background-color: dodgerblue;
+    color: white;
+    width: 55%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
   }
 
   /*.............................. Extra small devices (phones, 600px and down) .........................*/
@@ -219,6 +307,11 @@
     
     p{
       font-size: 13px;
+    }
+
+    /* Lists */
+    ul.para-list{
+      font-size: 12.5px;
     }
 
     /* Navbar*/
@@ -281,9 +374,31 @@
     }
 
     #section3 ul.para-list{
-      font-size: 13px;
       margin-right: 9%;
       margin-left: 8%;
+    }
+
+    /* Section 4 */
+    #section4 .container-fluid{
+      margin: 0;
+      padding: 0;
+    }
+
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
     }
   }
 
@@ -294,11 +409,16 @@
       font-size: 14.5px;
     }
 
+    /* Lists */
+    ul.para-list{
+      font-size: 14px;
+    }
+
     /* Navbar*/
     .navbar-brand{
       margin-right: 0px; 
     }
-
+   
     .navbar-dark .nav-item .nav-link{
       color:lightgray;
       font-size: 12px;
@@ -360,18 +480,58 @@
       align-items: center;
       margin-top: 5%;
     }
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
   }
 
   /*....................... Medium devices (landscape tablets, 768px and up) ......................*/
-  @media only screen and (min-width: 768px) and (max-width: 1100 px) {
+  @media only screen and (max-width: 1100px) and (min-width: 768px){
 
     /* Section 1 */
     .carousel-caption h3{
       position: absolute;
-      font-size: 12px;
+      font-size: 18px;
     }
 
     /* Section 2 */
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
 
   }
 
@@ -544,31 +704,134 @@
         </p>
       </div>
       <br/>
-      <div class="container-3">
+      <div class="container-img">
         <img src="assets/what we do pic.jpg" id="sec3-img" alt="What We Do Image" width="100%" height="auto">
         <div class="centered"><p>“We bring together world class expertise to deliver real value to our clients.”</p></div>
       </div>
     </div>
 
     <!-- Section 4 -->
-    <div id="section4" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 4</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <div id="section4" class="container-fluid">
+        <div class="separator"><h2>Some of Our Consulting Services</h2></div>
+        <br/>
+        <div class="flex-row">
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Stability and preformulation</li>
+              <li>Dissolution and release</li>
+              <li>Bioavailability and bioequivalence/biosimilar</li>
+              <li>Impurity profiling </li>
+              <li>Drug delivery & control release formulations</li>
+            </ul>
+          </div>
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Pharmaceutical analytical</li>
+              <li>Advice on facility design, qualification, and operation</li>
+              <li>Legal issues and regulatory affairs</li>
+              <li>Pharmaceutical profile</li>
+              <li>GMP/QC&QA</li>
+              <li>Supply chain services</li>
+            </ul>
+          </div>          
+        </div>
+
+        <div class="flex-row">
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Pharmaceutical market share</li>
+              <li>Drug registration and marketing services</li>
+              <li>Management, strategy, and planning for commercial launch pharma</li>
+              <li>Development and nationalization of Saudi pharmaceutical industry</li>
+            </ul>
+          </div>
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Review of validation plans</li>
+              <li>Troubleshooting on a wide range of technical problems</li>
+              <li>Good vigilance practice advisory services</li>
+              <li>Training and workshops in the pharmaceutical field</li>
+              <li>Others pharmaceutical consulting services</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Healthcare Institutions internal environment</li>
+              <li>Healthcare Institutions services scope</li>
+              <li>Management, strategy, and planning for Healthcare Institutions</li>
+              <li>Specialized quality and improvement projects for Healthcare Institutions</li>
+            </ul>
+          </div>
+          <div class="consult-div">
+            <ul class="para-list">
+              <li>Review of validation plans</li>
+              <li>Troubleshooting on a wide range of operational problems</li>
+              <li>Adjust the day-to-day operations</li>
+              <li>Training and workshops in the Healthcare Institutions field</li>
+              <li>Others Healthcare Institutions consulting services</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container-img" style="margin-top:5%;">
+          <img src="assets/consult pic.jpg" alt="Consult" width="100%" height="auto">
+        </div>
       </div>
 
       <!-- Section 5 -->
-      <div id="section5" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 5</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <div id="section5" class="container-fluid">
+        <div class="separator"><h2>Our Team</h2></div>
+        <div>
+          <p class="para">
+            Our office in Saudi Arabia provides all kinds of pharmaceutical consulting services.
+          </p>
+          <div class="team-img">
+            <img src="assets/team pic1.jpg" alt="Team Image 1" width="30%" height="auto">
+          </div>
+          <br/>
+          <p class="para">
+            We are a group of scientists and experts from all over the world in the pharmaceutical field.
+          </p>
+          <div class="flex-column">
+            <div class="flex-row">
+              <img src="assets/teamflag1.jpg" alt="Consult" width="20%" height="auto">
+              <img src="assets/teamflag2.jpg" alt="Consult" width="20%" height="auto">
+              <img src="assets/teamflag3.jpg" alt="Consult" width="20%" height="auto">
+              <img src="assets/teamflag4.jpg" alt="Consult" width="20%" height="auto">
+            </div>
+            <br/>
+            <div class="flex-row">
+              <img src="assets/teamflag5.jpg" alt="Consult" width="20%" height="auto">
+              <img src="assets/teamflag6.jpg" alt="Consult" width="20%" height="auto">
+              <img src="assets/teamflag7.jpg" alt="Consult" width="20%" height="auto">
+            </div>
+          </div>
+          
+        </div>
       </div>
 
       <!-- Section 6 -->
-      <div id="section6" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 6</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <div id="section6" class="container-fluid">
+        <div class="flex-row">
+          <div class="contact-div1">
+            <h3 style="text-align: center;">Contact Us</h3>
+            <p class="para">
+              We help global leaders with their organization's most critical issues and opportunities. 
+              <br/>
+              Together, we create enduring change and results
+            </p>
+          </div>
+          <div class="contact-div2">
+            <img src="assets/pharmapro logo 2.PNG" alt="Logo" width="100%" height="auto">
+            <div class="contact-link">
+              <img src="assets/contact-link1.png" alt="LinkdIn" width="20%" height="auto">
+              <img src="assets/contact-link2.png" alt="Twitter" width="20%" height="auto">
+            </div>
+          </div>
+        </div>        
       </div>
   
 </body>
