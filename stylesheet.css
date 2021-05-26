@@ -1,18 +1,482 @@
-<<<<<<< HEAD
-nav li a{
-    color: white;
-}
+    /* body */
+    body {
+      position: relative; 
+    }
 
-nav li a:hover, a:active{
-    color: lightgray;
-    font-weight: 470;  
-=======
-nav li a{
-    color: white;
-}
+    .container-fluid{
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
 
-nav li a:hover, a:active{
-    color: lightgray;
-    font-weight: 470;  
->>>>>>> 88d0d3205a96828d5d17b6c2438cac71125ab28f
-}
+    /* Navbar*/
+    .logo{
+        float: left;
+        max-width: 60%;
+        height: auto;
+    }
+
+    .navstyle{
+        background-color: black;
+    }
+
+    .navbar-dark .nav-item .nav-link{
+        color:lightgray;
+        font-weight: 500;
+    }
+    
+    .navbar-dark .nav-item.active .nav-link,
+    .navbar-dark .nav-item:focus .nav-link,
+    .navbar-dark .nav-item:hover .nav-link {
+    color:dodgerblue;
+    }  
+
+    /*Seperator (line)*/
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      height:2px;
+      border-width:0;
+    }
+    
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #000;
+    }
+    
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 3.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 3.0em;
+    }
+
+  /* Paragraph spacing */
+  .para{
+    margin: 5% 7% 0% 7%;
+  }
+  
+  /* White Seperator */
+  #section1 .perspective-div .separator::before,
+  #section1 .perspective-div .separator::after,
+  #section3 .separator::before,
+  #section3 .separator::after{
+    border-bottom: 1px solid #fff;
+  }
+
+  /* Lists */
+  ul.para-list{
+    line-height: 1.6;
+    list-style-position: outside;
+  }
+
+  ul.para-list li + li {
+    margin-top: 10px;
+  }
+
+  /* Text over Image */
+  .container-img {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+    /* Flex Columns and Rows */
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+  /* --------------------------------------Section 1----------------------------------------- */
+  /* Container Carousel */
+  #section1.container-fluid{
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .perspective-div{
+    background-color: dodgerblue;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+  }
+
+  /* Carousel */
+  /* Slide background image */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-item img {
+    max-height: 100vh; 
+    object-fit:cover;
+    margin-top: 15vh;
+  }
+
+  .carousel-indicators li { 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 100%;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px; 
+  }
+
+  /* --------------------------------------Section 2----------------------------------------- */
+
+  .para-head{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  /* --------------------------------------Section 3----------------------------------------- */
+  #section3.container-fluid{
+    background-color: dodgerblue;
+    color: white;
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
+  }
+
+  #section3 ul.para-list{
+    list-style-position: inside;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+
+  /* --------------------------------------Section 4----------------------------------------- */
+  #section4.container-fluid{
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
+  }
+
+  .consult-div{
+    background-color: dodgerblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 50%;
+    margin-top: 5%;
+    padding: 5%;
+  }
+
+  .consult-div + .consult-div{
+    margin-left: 5%;
+  }
+
+  #section4 .flex-row {
+    flex-wrap: nowrap;
+  }
+
+  /* --------------------------------------Section 5----------------------------------------- */
+  #section5 .para{
+    text-align: center;
+  }
+
+  .team-img{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5%;
+  }
+
+  #section5 .flex-column{
+    margin: 7% 10% 0% 10%;
+  }
+
+  /* --------------------------------------Section 6----------------------------------------- */
+  #section6.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #section6 .flex-row{
+    margin: 0;
+  }
+  
+  .contact-div1{
+    background-color: dodgerblue;
+    color: white;
+    width: 55%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+  }
+
+  #section6 .center-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #section6 a.btn{
+    background-color:firebrick;
+    color: white;
+    font-size: 15px;
+    padding: 2% 5% 2% 5%;
+    margin-top: 5%;
+  }
+
+  #section6 a.btn:hover{
+    background-color: white;
+    color: firebrick;
+    border: 1px solid firebrick;
+    padding: 2.5% 5.5% 2.5% 5.5%;
+  }
+
+  /*.............................. Extra small devices (phones, 600px and down) .........................*/
+  @media only screen and (max-width: 600px) {
+    
+    p{
+      font-size: 13px;
+    }
+
+    /* Lists */
+    ul.para-list{
+      font-size: 12.5px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /*Seperator (line)*/
+    .separator h2{
+      font-size: 22px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1 #slide{
+      display: none;
+    }
+
+    #section1 .perspective-div{
+      padding-top: 25%;
+    }
+
+    /* Section 2 */
+    #section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    #section2 #sec2-img2{
+      display: none;
+    }
+    
+    .para-head{
+      font-size: 18px;
+      font-weight: 460;
+    }  
+
+    /* Section 3 */
+    #section3 .container-3{
+      display: none;
+    }
+
+    #section3 ul.para-list{
+      margin-right: 9%;
+      margin-left: 8%;
+    }
+
+    /* Section 4 */
+    #section4 .container-fluid{
+      margin: 0;
+      padding: 0;
+    }
+
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  }
+
+  /*............... Small devices (portrait tablets and large phones, 600px and up) .............. */
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+
+    p{
+      font-size: 14.5px;
+    }
+
+    /* Lists */
+    ul.para-list{
+      font-size: 14px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+   
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+     /*Seperator (line)*/
+     .separator h2{
+      font-size: 25px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1 #slide{
+      display:contents;
+    }
+
+    .carousel-caption h3{
+      position: absolute;
+      font-size: 15px;
+    }
+
+    /* Section 2 */
+    #Section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  }
+
+  /*....................... Medium devices (landscape tablets, 768px and up) ......................*/
+  @media only screen and (max-width: 1100px) and (min-width: 768px){
+
+    /* Section 1 */
+
+    /* Section 2 */
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+
+  }
