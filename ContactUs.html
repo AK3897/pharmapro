@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
+  <title>Contact Us</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,21 +22,96 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
 
-<!--   <script>
-    $(document).ready(function() {
-        // workaround for deep link via anchor
-        var stripped_url = window
-                        .location
-                        .toString()
-                        .split("#");
-        if (stripped_url.length > 1) {
-            var activeId = "#section" + stripped_url[1];
-            $(activeId)[0].click();
-        }
-    });
-  </script> -->
+<script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+        });
+    }, false);
+    })();
 
-  <style>
+
+
+    //Send Form details////////////////////////////////////////////////////
+    $(function()
+{
+    function after_form_submitted(data)
+    {
+        if(data.result == 'success')
+        {
+            $('form#contactus_form').hide();
+            $('#success_message').show();
+            $('#error_message').hide();
+        }
+        else
+        {
+            $('#error_message').append('<ul></ul>');
+
+            jQuery.each(data.errors,function(key,val)
+            {
+                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+            });
+            $('#success_message').hide();
+            $('#error_message').show();
+
+            //reverse the response on the button
+            $('button[type="button"]', $form).each(function()
+            {
+                $btn = $(this);
+                label = $btn.prop('orig_label');
+                if(label)
+                {
+                    $btn.prop('type','submit' );
+                    $btn.text(label);
+                    $btn.prop('orig_label','');
+                }
+            });
+
+        }//else
+    }
+
+	$('#contactus_form').submit(function(e)
+      {
+        e.preventDefault();
+
+        $form = $(this);
+        //show some response on the button
+        $('button[type="submit"]', $form).each(function()
+        {
+            $btn = $(this);
+            $btn.prop('type','button' );
+            $btn.prop('orig_label',$btn.text());
+            $btn.text('Sending ...');
+        });
+
+
+            $.ajax({
+                type: "POST",
+                url: 'handler.php',
+                data: $form.serialize(),
+                contentType: "application/json; charset=utf-8",
+                success: after_form_submitted,
+                dataType: 'json'
+            });
+
+      });
+});
+//////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+<style>
     body .display-flex{
         display: flex;
         flex-direction: column;
@@ -52,7 +127,7 @@
         text-align: center;
         padding: 1.5% 0.5% 1.5% 0.5%;
         margin-top: 5%;
-     }
+    }
 
     
     /* Style Icons */
@@ -78,9 +153,9 @@
     }
 
     /* Contact Us Div */
-    #contactus-form.container-fluid{
+    #contactus-form-div.container-fluid{
         flex: 1 1 auto; 
-        margin: 10% 0% 5% 0%;
+        margin: 7% 0% 5% 0%;
 
     }
 
@@ -98,7 +173,8 @@
     .contactus-img{
         margin: auto;
     }
-  </style>
+
+</style>
 
 </head>
 
@@ -141,7 +217,7 @@
         </nav>
     </div>
     
-    <div id="contactus-form" class="container-fluid">
+    <div id="contactus-form-div" class="container-fluid">
         <div class="flex-row">
             <div class="contactus-div1">
                 <h2>Contact Us</h2>
@@ -155,20 +231,27 @@
                 <p>
                     So we can help serve you better, please complete the form below. We will respond as soon as possible, usually within a few business days.
                 </p>
+                <br/>
 
                 <!-- Form -->
-                <form action="/action_page.php">
+                <form role="form" method="post" id="contactus_form" class="needs-validation" novalidate>
                     <div class="form-group">
                         <label for="fname">First Name</label>
-                        <input type="text" class="form-control" id="fname">
+                        <input type="text" class="form-control" id="fname" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
-                        <label for="lname">Last Name<label>
-                        <input type="text" class="form-control" id="lname">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
                         <label for="pnumber">Phone Number</label>
@@ -177,15 +260,72 @@
                     <div class="form-group">
                         <label for="country-list">Country</label>
                         <select class="form-control" id="country-list">
+                          <option value="" selected disabled>Select...</option>
                           <option>Saudi Arabia</option>
                           <option>UAE</option>
                           <option>USA</option>
                           <option>UK</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title/Role</label>
+                        <select class="form-control" id="title" required>
+                          <option value="" selected disabled>Select...</option>
+                          <option>Title1</option>
+                          <option>Title2</option>
+                          <option>Title3</option>
+                          <option>Title4</option>
+                        </select>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please select a value.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company-name">Company Name</label>
+                        <input type="text" class="form-control" id="company-name" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-of-interest">Service of Interest</label>
+                        <select class="form-control" id="service-of-interest">
+                          <option value="" selected disabled>Select...</option>
+                          <option>Service1</option>
+                          <option>Service2</option>
+                          <option>Service3</option>
+                          <option>Service4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="no-of-employees">Number of Employees</label>
+                        <select class="form-control" id="no-of-employees" required>
+                          <option value="" selected disabled>Select...</option>
+                          <option>less than 10</option>
+                          <option>10 - 100</option>
+                          <option>100 - 1000</option>
+                          <option>More than 1000</option>
+                        </select>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please select a value.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" rows="5" id="message" maxlength="6000" required></textarea>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                </form>
+
+                <!-- Message -->
+                <div id="success_message" style="width:100%; height:100%; display:none; ">
+                    <h3>Posted your feedback successfully!</h3>
                 </div>
+                <div id="error_message" style="width:100%; height:100%; display:none; ">
+                    <h3>Error</h3>
+                    Sorry there was an error sending your form.
+                </div>
+
             </div>
         </div>
     </div>
@@ -204,8 +344,8 @@
                 </p>
             </div>
             <div class="icon-link">
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="https://m.facebook.com/profile.php?id=100058372083158&tsid=0.7980374525136407&source=result" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <a href="https://twitter.com/thepharmapro1" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
     </div>
