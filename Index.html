@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="C:\Users\Areeba\VSCodeProjects\pharmapro\stylesheet.css"> -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+
+    /* body */
+    body {
+      position: relative; 
+    }
+
+    .container-fluid{
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+
+    /* Navbar*/
+    .logo{
+        float: left;
+        max-width: 60%;
+        height: auto;
+    }
+
+    .navstyle{
+        background-color: black;
+    }
+
+    .navbar-dark .nav-item .nav-link{
+        color:lightgray;
+        font-weight: 500;
+    }
+    
+    .navbar-dark .nav-item.active .nav-link,
+    .navbar-dark .nav-item:focus .nav-link,
+    .navbar-dark .nav-item:hover .nav-link {
+    color:dodgerblue;
+    }  
+
+    /*Seperator (line)*/
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      height:2px;
+      border-width:0;
+    }
+    
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #000;
+    }
+    
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 3.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 3.0em;
+    }
+
+  /* Paragraph spacing */
+  .para{
+    margin: 5% 7% 0% 7%;
+  }
+  
+  /* White Seperator */
+  #section1 .perspective-div .separator::before,
+  #section1 .perspective-div .separator::after,
+  #section3 .separator::before,
+  #section3 .separator::after{
+    border-bottom: 1px solid #fff;
+  }
+
+  /* Lists */
+  ul.para-list{
+    line-height: 1.6;
+    list-style-position: outside;
+  }
+
+  ul.para-list li + li {
+    margin-top: 10px;
+  }
+
+  /* Text over Image */
+  .container-img {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+    /* Flex Columns and Rows */
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+  /* --------------------------------------Section 1----------------------------------------- */
+  /* Container Carousel */
+  #section1.container-fluid{
+    width: 100%;
+    padding: 0%;
+    margin: -2% 0% 0% 0%;
+  }
+
+  .perspective-div{
+    background-color: dodgerblue;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+  }
+
+  /* Carousel */
+  /* Slide background image */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-item img {
+    max-height: 100vh; 
+    object-fit:cover;
+    margin-top: 15vh;
+  }
+
+  .carousel-indicators li { 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 100%;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px; 
+  }
+
+  /* --------------------------------------Section 2----------------------------------------- */
+
+  .para-head{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  /* --------------------------------------Section 3----------------------------------------- */
+  #section3.container-fluid{
+    background-color: dodgerblue;
+    color: white;
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
+  }
+
+  #section3 ul.para-list{
+    list-style-position: inside;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+
+  /* --------------------------------------Section 4----------------------------------------- */
+  #section4.container-fluid{
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+    margin: 0%;
+  }
+
+  .consult-div{
+    background-color: dodgerblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 50%;
+    margin-top: 5%;
+    padding: 5%;
+  }
+
+  .consult-div + .consult-div{
+    margin-left: 5%;
+  }
+
+  #section4 .flex-row {
+    flex-wrap: nowrap;
+  }
+
+  /* --------------------------------------Section 5----------------------------------------- */
+  #section5 .para{
+    text-align: center;
+  }
+
+  .team-img{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5%;
+  }
+
+  .flag-spacing{
+    margin-top: 5%;
+  }
+
+  #section5 .flex-column{
+    margin: 7% 10% 0% 10%;
+  }
+
+  /* --------------------------------------Section 6----------------------------------------- */
+  #section6.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #section6 .flex-row{
+    margin: 0;
+  }
+  
+  .contact-div1{
+    background-color: dodgerblue;
+    color: white;
+    width: 55%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 400px;
+    padding: 5%;
+  }
+
+  .contact-link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+  }
+
+  #section6 .center-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #section6 a.btn{
+    background-color:firebrick;
+    color: white;
+    font-size: 15px;
+    padding: 2% 5% 2% 5%;
+    margin-top: 5%;
+  }
+
+  #section6 a.btn:hover{
+    background-color: white;
+    color: firebrick;
+    border: 1px solid firebrick;
+    padding: 2.5% 5.5% 2.5% 5.5%;
+  }
+
+  /*.............................. Extra small devices (phones, 600px and down) .........................*/
+  @media only screen and (max-width: 600px) {
+    
+    p{
+      font-size: 13px;
+    }
+
+    /* Lists */
+    ul.para-list{
+      font-size: 12.5px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /*Seperator (line)*/
+    .separator h2{
+      font-size: 22px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1 #slide{
+      display: none;
+    }
+
+    #section1 .perspective-div{
+      padding-top: 25%;
+    }
+
+    /* Section 2 */
+    #section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    #section2 #sec2-img2{
+      display: none;
+    }
+    
+    .para-head{
+      font-size: 18px;
+      font-weight: 460;
+    }  
+
+    /* Section 3 */
+    #section3 .container-3{
+      display: none;
+    }
+
+    #section3 ul.para-list{
+      margin-right: 9%;
+      margin-left: 8%;
+    }
+
+    /* Section 4 */
+    #section4 .container-fluid{
+      margin: 0;
+      padding: 0;
+    }
+
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  }
+
+  /*............... Small devices (portrait tablets and large phones, 600px and up) .............. */
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+
+    p{
+      font-size: 14.5px;
+    }
+
+    /* Lists */
+    ul.para-list{
+      font-size: 14px;
+    }
+
+    /* Navbar*/
+    .navbar-brand{
+      margin-right: 0px; 
+    }
+   
+    .navbar-dark .nav-item .nav-link{
+      color:lightgray;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+     /*Seperator (line)*/
+     .separator h2{
+      font-size: 25px;
+     }
+
+    .separator:not(:empty)::before {
+      margin-right: 1.0em;
+      margin-left: 1.0em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: 1.0em;
+      margin-right: 1.0em;
+    }
+
+    /* Section 1 */
+    #section1 #slide{
+      display:contents;
+    }
+
+    .carousel-caption h3{
+      position: absolute;
+      font-size: 15px;
+    }
+
+    /* Section 2 */
+    #Section2 .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  }
+
+  /*....................... Medium devices (landscape tablets, 768px and up) ......................*/
+  @media only screen and (max-width: 1100px) and (min-width: 768px){
+
+    /* Section 1 */
+
+    /* Section 2 */
+
+    /* Section 3 */
+
+    /* Section 4 */
+    .consult-div{
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 50%;
+      margin: 4% 0% 0% 0%;
+      padding: 3% 3% 3% 0%;
+    }
+
+    .consult-div + .consult-div{
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+
+  }
+
+
+  </style>
+  
+<!-- Script Tag-->
+  <script>
+
+  </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="0">
+  <!-- Navbar -->  
+  <nav class="navbar navstyle navbar-dark navbar-expand-sm fixed-top">  
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="Default.html"><img src="assets/pharmapro logo.png" alt="Logo" class="logo"></a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+              <a class="nav-link" href="#section1">Our Perspective</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section2">Overview</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section3">What We Do</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section4">Our Consulting Services</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section5">Our Team</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#section6">Contact</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+  <!-- Section 1 -->
+  <div id="section1" class="container-fluid">
+    <div id="slide" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#slide" data-slide-to="0" class="active"></li>
+        <li data-target="#slide" data-slide-to="1"></li>
+        <li data-target="#slide" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/slidebg1.jpg" alt="Our Experience"> 
+        </div>
+        <div class="carousel-item">
+          <img src="assets/slidebg2.jpg" alt="Our Dedication">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/slidebg3.jpg" alt="Quality">  
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#slide" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#slide" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <div class="perspective-div">
+      <div class="separator"><h2>Our Perspective</h2></div>
+      <div>
+        <p class="para">
+        Over the last 30 years, the Saudi pharmaceutical industry has made revolutionary contributions to health care. The Saudi pharmaceutical industry now faces the challenges of drug manufacturing, increasingly competitive markets, and uncertain policy and regulatory environments. Regardless of ongoing medications need related to numerous diseases, the Saudi pharmaceutical sectors can no longer depend on their pricing power to achieve profitable growth.
+        <br/><br/>
+        The net result of ongoing cost pressures and a precipitous decline in R&D productivity will be an unprecedented decline in the share of the overall healthcare profit pool captured by the largest research-based pharmaceutical companies.
+      </p>
+
+      <p class="para">
+        Lower-margin pharmaceutical sectors, like generic manufacturers in the Kingdome of Saudi Arabia, will increase their share. The critical question for the Saudi pharmaceutical industry is how to evolve their business model in order to thrive in a world of shifting profit pools by focusing on the high-quality outcomes by R&D rather than by simply generating more inputs, more products, more procedures and ultimately more cost to the payers.
+      </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div id="section2" class="container-fluid">
+    <div class="separator"><h2>Overview</h2></div>
+      <div>
+        <p class="para">
+        We help pharmaceutical sectors in the Kingdom of Saudi Arabia & MENA become more competitive in a rapidly evolving market characterized by unpredictable product pipelines and uncertain regulatory actions. We bring unmatched expertise in innovation, cost management, organizational design, R&D and other disciplines that determine which pharma sectors achieve and maintain pharmaceutical leadership.
+        </p>
+      </div>
+
+      <div class="para" style="text-align: center; margin-top: 9%; margin-bottom: 9%;">
+      <img src="assets/pharmapro logo white-bg.JPG" alt="Logo" width="30%" height="auto">
+      <p>“we help you to make better informed strategic decisions”</p>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-column">
+        <p class="para-head">Vision</p>
+        <p>Excellent scientific reference in the pharmaceutical consulting, training and logistics services and pharmaceutical products services.</p>
+
+        <p class="para-head">Mission</p>
+        <p>To exceed our customers’ expectations with excellence and leadership in providing pharmaceutical consulting services.</p>
+
+        <p class="para-head">Value</p>
+        <p>We are committed to providing the best pharmaceutical consulting services to our clients with a focus on leadership, integrity, and efficiency.</p>
+        </div>
+
+        <div>
+          <img src="assets/overview.jpg" id="sec2-img2" alt="Overview image" width="100%" height="auto">
+        </div>      
+      </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div id="section3" class="container-fluid">
+    <div class="separator"><h2>What We Do</h2></div>
+    <div>
+      <p class="para">
+        We work with leading pharmaceutical sectors in Saudi Arabia (e.g., companies, manufactures, Saudi FDA,  and Saudi MOH) to help create the foundations for future growth and improve the effectiveness and efficiency of their current operations. We help our clients by focusing on the priorities that will make them adaptable to attractive market opportunities, including:
+        <br/><br/>
+        <ul class="para-list">
+          <li>R&D and regulatory advisory services to the pharmaceutical industry.</li>
+          <li>Enhancing innovation and clinical differentiation. <strong>Pharmaceutical and biopharmaceutical companies can realize the full potential of their R&D and innovation capabilities by building portfolios that balance solid investments with riskier product development and source innovation from both internal and external sources.</strong></li>
+          <li>Adopting cost-effective business models. <strong>Pharma companies need to change their business models to significantly increase their return on sales.</strong></li>
+          <li>Enhancing the nationalization and development of pharmaceutical industries.</li>
+          <li>Exploiting the true benefits of global scale while managing complexity. <strong> Pharma companies will discriminate between functions where scale adds value versus where it reduces productivity and adds complexity.</strong></li>
+        </ul>
+      </p>
+
+      <p class="para">
+        We work with healthcare institutions and governmental authority to improve the healthcare practice in Saudi Arabia by applying the most adapted and evidence-based practices. We help our clients by focusing on the priorities that will make them adaptable to attractive market opportunities, including:
+        <br/><br/>
+        <ul class="para-list">
+          <li>R&D and regulatory advisory services to the healthcare industry.</li>
+          <li>Enhancing innovation and clinical differentiation.</li>
+          <li>Adopting cost-effective business models. <strong>Healthcare institutions need to change their business models to significantly increase their return on sales.</strong></li>
+          <li>Enhancing the quality of giving services. <strong>Helping the healthcare institutions to adapt the national and international standard to improve the services which lead  to better patients' outcomes results.</strong></li>
+          <li>Exploiting the true benefits of global scale while managing complexity. <strong>Successful healthcare institutions will discriminate between functions where scale adds value versus where it reduces productivity and adds complexity.</strong></li>
+        </ul>
+      </p>
+
+      <p class="para">
+        We work partnerships from over he world to bring the highest and must required pharmaceutical, herbal and cosmetic products which covering the broad scale of needs for everyone on our community.  To give the highest degree of excellence  in dealing with such products we have the following:
+        <br/><br/>
+        <ul class="para-list">
+          <li>A unique marketing and commercial team to promote and aid the safe and secure products diffusion.</li>
+          <li>A secure marketplace to reach all authorized customers with our portfolio in no time <strong>which will lead to better products availability and customer stratification.</strong></li>
+          <li>We have an agreement which give us the opportunity to store and deliver the products <strong>immediately to more than 160 areas in Saudi Arabia within 48 hours.</strong></li>
+          <li>Adopting cost-effective business models. <strong>Pharma companies need to change their business models to significantly increase their return on sales.</strong></li>
+          <li><strong>Enhancing the concept of excellency and high-quality environment</strong> by providing the most  attracted topics, training, materials and consultation.</li>
+        </ul>
+      </p>
+    </div>
+    <br/>
+    <div class="container-img">
+      <img src="assets/what we do pic.jpg" id="sec3-img" alt="What We Do Image" width="100%" height="auto">
+      <div class="centered"><p>“We bring together world class expertise to deliver real value to our clients.”</p></div>
+    </div>
+    <br/><br/><br/>
+  </div>
+
+  <!-- Section 4 -->
+  <div id="section4" class="container-fluid">
+      <div class="separator"><h2>Some of Our Consulting Services</h2></div>
+      <br/>
+      <div class="flex-row">
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Stability and preformulation</li>
+            <li>Dissolution and release</li>
+            <li>Bioavailability and bioequivalence/biosimilar</li>
+            <li>Impurity profiling </li>
+            <li>Drug delivery & control release formulations</li>
+          </ul>
+        </div>
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Pharmaceutical analytical</li>
+            <li>Advice on facility design, qualification, and operation</li>
+            <li>Legal issues and regulatory affairs</li>
+            <li>Pharmaceutical profile</li>
+            <li>GMP/QC&QA</li>
+            <li>Supply chain services</li>
+          </ul>
+        </div>          
+      </div>
+
+      <div class="flex-row">
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Pharmaceutical market share</li>
+            <li>Drug registration and marketing services</li>
+            <li>Management, strategy, and planning for commercial launch pharma</li>
+            <li>Development and nationalization of Saudi pharmaceutical industry</li>
+          </ul>
+        </div>
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Review of validation plans</li>
+            <li>Troubleshooting on a wide range of technical problems</li>
+            <li>Good vigilance practice advisory services</li>
+            <li>Training and workshops in the pharmaceutical field</li>
+            <li>Others pharmaceutical consulting services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Healthcare Institutions internal environment</li>
+            <li>Healthcare Institutions services scope</li>
+            <li>Management, strategy, and planning for Healthcare Institutions</li>
+            <li>Specialized quality and improvement projects for Healthcare Institutions</li>
+          </ul>
+        </div>
+        <div class="consult-div">
+          <ul class="para-list">
+            <li>Review of validation plans</li>
+            <li>Troubleshooting on a wide range of operational problems</li>
+            <li>Adjust the day-to-day operations</li>
+            <li>Training and workshops in the Healthcare Institutions field</li>
+            <li>Others Healthcare Institutions consulting services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-img" style="margin-top:5%;">
+        <img src="assets/consult pic.jpg" alt="Consult" width="100%" height="auto">
+      </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div id="section5" class="container-fluid">
+    <div class="separator"><h2>Our Team</h2></div>
+    <div>
+      <p class="para">
+        Our office in Saudi Arabia provides all kinds of pharmaceutical consulting services.
+      </p>
+      <div class="team-img">
+        <img src="assets/team pic1.jpg" alt="Team Image 1" width="30%" height="auto">
+      </div>
+      <br/>
+      <p class="para">
+        We are a group of scientists and experts from all over the world in the pharmaceutical field.
+      </p>
+      <div class="flex-column">
+        <div class="flex-row">
+          <img src="assets/teamflag1.jpg" alt="Consult" width="20%" height="auto">
+          <img src="assets/teamflag2.jpg" alt="Consult" width="20%" height="auto">
+          <img src="assets/teamflag3.jpg" alt="Consult" width="20%" height="auto">
+          <img src="assets/teamflag4.jpg" alt="Consult" width="20%" height="auto">
+        </div>
+        <div class="flag-spacing"></div>
+        <div class="flex-row">
+          <img src="assets/teamflag5.jpg" alt="Consult" width="20%" height="auto">
+          <img src="assets/teamflag6.jpg" alt="Consult" width="20%" height="auto">
+          <img src="assets/teamflag7.jpg" alt="Consult" width="20%" height="auto">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div id="section6" class="container-fluid">
+    <div class="flex-row">
+      <div class="contact-div1">
+        <h3 style="text-align: center;">Contact Us</h3>
+        <p class="para">
+          We help global leaders with their organization's most critical issues and opportunities. 
+          <br/>
+          Together, we create enduring change and results
+        </p>
+        <div class="center-button">
+          <a href="ContactUs.html" target="_blank" class="btn" role="button">CONTACT US</a>
+        </div>
+        
+      </div>
+      <div class="contact-div2">
+        <img src="assets/pharmapro logo 2.PNG" alt="Logo" width="100%" height="auto">
+        <div class="contact-link">
+          <a href="https://m.facebook.com/profile.php?id=100058372083158&tsid=0.7980374525136407&source=result" target="_blank"><img src="assets/contact-link3.png" alt="Facebook" width="40%" height="auto"></a>
+          <a href="https://twitter.com/thepharmapro1" target="_blank"><img src="assets/contact-link2.png" alt="Twitter" width="40%" height="auto"></a>
+        </div>
+      </div>
+    </div>        
+  </div>
+  
+</body>
+</html>
