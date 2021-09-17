@@ -184,7 +184,7 @@
         <nav class="navbar navstyle navbar-dark navbar-expand-sm fixed-top">  
 
             <!-- Brand -->
-            <a class="navbar-brand" href="Default.html"><img src="assets/pharmapro logo.png" alt="Logo" class="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/pharmapro logo.png" alt="Logo" class="logo"></a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -222,7 +222,7 @@
             <div class="contactus-div1">
                 <h2>Contact Us</h2>
                 <div class="contactus-img">
-                    <img src="assets/pharmapro logo white-bg.JPG" alt="Pharmapro logo" width="50%" height="auto">
+                    <img src="assets/images/pharmapro logo white-bg.JPG" alt="Pharmapro logo" width="50%" height="auto">
                 </div>
                             
             </div>
@@ -762,13 +762,9 @@
                     </div>
                     <div class="form-group">
                         <label for="service-of-interest">Service of Interest</label>
-                        <select class="form-control" id="service-of-interest">
-                          <option value="" selected disabled>Select...</option>
-                          <option>Service1</option>
-                          <option>Service2</option>
-                          <option>Service3</option>
-                          <option>Service4</option>
-                        </select>
+                        <input type="text" class="form-control" id="service-of-interest" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
                         <label for="no-of-employees">Number of Employees</label>
